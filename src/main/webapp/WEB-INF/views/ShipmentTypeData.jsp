@@ -20,7 +20,7 @@
 	<th>ENABLE</th>
 	<th>GRADE</th>
 	<th>NOTE</th>
-	<th>OPERATION</th>
+	<th colspan="3">OPERATION</th>
 </tr>
 
 <c:forEach items="${list}" var="ob">

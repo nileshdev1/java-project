@@ -11,13 +11,14 @@
 <h3>Welcome To UOM Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
+<a href="excel">Excel Export</a>
 <table border="1">
 <tr>
 	<th>ID</th>
 	<th>TYPE</th>
 	<th>MODEL</th>
 	<th>NOTE</th>
-	<th>OPERATION</th>
+	<th colspan="3">OPERATION</th>
 </tr>
 
 <c:forEach items="${list}" var="ob">

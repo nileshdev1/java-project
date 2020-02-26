@@ -11,14 +11,16 @@
 <h3>Welcome To OrderMethod Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
+<a href="excel">Excel Export</a>
 <table border="1">
 <tr>
 	<th>ORDER ID</th>
 	<th>ORDER MODE</th>
 	<th>ORDER CODE</th>
+	<th>ORDER TYPE</th>
 	<th>ORDER ACCEPT</th>
 	<th>NOTE</th>
-	<th>OPERATION</th>
+	<th colspan="3">OPERATION</th>
 </tr>
 
 <c:forEach items="${list}" var="ob">
