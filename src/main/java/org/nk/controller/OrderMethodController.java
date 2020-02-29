@@ -1,5 +1,6 @@
 package org.nk.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.nk.model.OrderMethod;
@@ -21,7 +22,7 @@ public class OrderMethodController {
 
 	@Autowired
 	private IOrderMethodService service;
-	
+
 	/*
 	 * This method is use to 
 	 * show registration form
@@ -103,7 +104,7 @@ public class OrderMethodController {
 	 */
 	@RequestMapping("/update")
 	public String updateOrderMethod(@ModelAttribute OrderMethod ordermethod, Model model ) {
-		
+
 		service.updateOrderMethod(ordermethod);
 		String message="OrderMethod"+ordermethod.getOrderId()+" Updeted";
 		model.addAttribute("message",message);
@@ -112,44 +113,63 @@ public class OrderMethodController {
 
 		return "OrderMethodData";
 	}
-	
+
 	/*
 	 *it will show selected id details 
 	 */
 	@RequestMapping("/view")
 	public String showOneOrderMethod(@RequestParam("oid")Integer id, Model model) {
-		
+
 		OrderMethod st=service.getOneOrderMethod(id);
 		model.addAttribute("ob",st);
-		
+
 		return "OrderMethodView";
 	}
-	
+
 	/*
 	 * Excel Export
 	 */
 	@RequestMapping("/excel")
-	public ModelAndView showExcel() {
-		
+	public ModelAndView showExcel(@RequestParam(value="id",required=false)Integer id) {
+
 		ModelAndView m=new ModelAndView();
 		m.setView(new OrderMethodExcelView());
-		List<OrderMethod> list=service.getAllOrderMethod();
-		m.addObject("list", list);
-		
+
+		if(id==null) {
+
+			List<OrderMethod> list=service.getAllOrderMethod();
+			m.addObject("list", list);
+		}
+		else {
+
+			OrderMethod om=service.getOneOrderMethod(id);
+			m.addObject("list", Arrays.asList(om));
+		}
+
 		return m;
 	}
-	
+
 	/*
 	 * PDF Export
 	 */
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf() {
-		
+	public ModelAndView showPdf(@RequestParam(value="id",required=false)Integer id) {
+
 		ModelAndView m=new ModelAndView();
 		m.setView(new OrderMethodPdfView());
-		List<OrderMethod> list=service.getAllOrderMethod();
-		m.addObject("list", list);
-		
+
+		if(id==null) {
+
+			List<OrderMethod> list=service.getAllOrderMethod();
+			m.addObject("list", list);
+		}
+		else {
+
+			OrderMethod om=service.getOneOrderMethod(id);
+			m.addObject("list", Arrays.asList(om));
+		}
+
+
 		return m;
 	}
 

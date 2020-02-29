@@ -1,5 +1,6 @@
 package org.nk.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.nk.model.WhUserType;
@@ -131,13 +132,20 @@ public class WhUserTypeController {
 		 * Excel Export
 		 */
 		@RequestMapping("/excel")
-		public ModelAndView showExcel() {
+		public ModelAndView showExcel(@RequestParam(value="id",required=false)Integer id) {
 			
 			ModelAndView m=new ModelAndView();
 			m.setView(new WhUserTypeExcelView());
-			List<WhUserType> list=service.getAllWhUserType();
-			m.addObject("list", list);
 			
+			
+			if(id==null) {
+				List<WhUserType> list=service.getAllWhUserType();
+				m.addObject("list", list);
+			}
+			else {
+				WhUserType wh=service.getOneWhUserType(id);
+				m.addObject("list", Arrays.asList(wh));
+			}
 			return m;
 		}
 		
@@ -146,13 +154,20 @@ public class WhUserTypeController {
 		 *PDF Export 
 		 */
 		@RequestMapping("/pdf")
-		public ModelAndView showPdf() {
+		public ModelAndView showPdf(@RequestParam(value="id",required=false)Integer id) {
 			
 			ModelAndView m=new ModelAndView();
 			m.setView(new WhUserTypePdfView());
-			List<WhUserType> list=service.getAllWhUserType();
-			m.addObject("list", list);
 			
+
+			if(id==null) {
+				List<WhUserType> list=service.getAllWhUserType();
+				m.addObject("list", list);
+			}
+			else {
+				WhUserType wh=service.getOneWhUserType(id);
+				m.addObject("list", Arrays.asList(wh));
+			}
 			return m;
 		}
 

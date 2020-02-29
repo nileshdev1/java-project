@@ -1,5 +1,6 @@
 package org.nk.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.nk.model.ShipmentType;
@@ -133,13 +134,21 @@ public class ShipmentTypeController {
 	 * Excel Export
 	 */
 	@RequestMapping("/excel")
-	public ModelAndView showExcel() {
+	public ModelAndView showExcel(
+			@RequestParam(value="id",required=false)Integer id)
+{
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new ShipmentTypeExcelView());
-		List<ShipmentType> list=service.getAllShipmentType();
-		m.addObject("list", list);
 		
+		if(id==null) {
+			List<ShipmentType> list=service.getAllShipmentType();
+			m.addObject("list", list);
+		}
+		else {
+			ShipmentType st=service.getOneShipmentType(id);
+			m.addObject("list", Arrays.asList(st));
+		}
 		return m;
 	}
 	
@@ -148,13 +157,21 @@ public class ShipmentTypeController {
 	 * PDF Export
 	 */
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf() {
+	public ModelAndView showPdf(@RequestParam(value="id",required=false)Integer id) {
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new ShipmentTypePdfView());
-		List<ShipmentType> list=service.getAllShipmentType();
-		m.addObject("list", list);
 		
+		if(id==null) {
+			List<ShipmentType> list=service.getAllShipmentType();
+			m.addObject("list", list);
+		}
+		else {
+			ShipmentType st=service.getOneShipmentType(id);
+			m.addObject("list", Arrays.asList(st));
+
+		}
+			
 		return m;
 	}
 

@@ -9,6 +9,8 @@
 </head>
 <body>
 <h3>Welcome To WhUserType View Page</h3>
+<a href="excel?id=${ob.whUserId}">Excel Export</a> |
+<a href="pdf?id=${ob.whUserId}">PDF Export</a>
 <table border="1">
 
 <tr>

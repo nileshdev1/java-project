@@ -1,4 +1,5 @@
 package org.nk.controller;
+import java.util.Arrays;
 import java.util.List;
 
 import org.nk.model.Uom;
@@ -128,12 +129,19 @@ public class UomController {
 	 * Excel Export 
 	 */
 	@RequestMapping("/excel")
-	public ModelAndView showExcel() {
+	public ModelAndView showExcel(@RequestParam(value="id",required=false)Integer id) {
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new UomExcelView());
-		List<Uom> list=service.getAllUom();
-		m.addObject("list", list);
+		
+		if(id==null) {
+			List<Uom> list=service.getAllUom();
+			m.addObject("list", list);
+		}
+		else {
+			Uom um=service.getOneUom(id);
+			m.addObject("list", Arrays.asList(um));
+		}
 		
 		return m;
 	}
@@ -142,13 +150,19 @@ public class UomController {
 	 * PDF Export
 	 */
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf() {
+	public ModelAndView showPdf(@RequestParam(value="id",required=false)Integer id) {
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new UomPdfView());
-		List<Uom> list=service.getAllUom();
-		m.addObject("list", list);
 		
+		if(id==null) {
+			List<Uom> list=service.getAllUom();
+			m.addObject("list", list);
+		}
+		else {
+			Uom um=service.getOneUom(id);
+			m.addObject("list", Arrays.asList(um));
+		}
 		return m;
 	}
 
