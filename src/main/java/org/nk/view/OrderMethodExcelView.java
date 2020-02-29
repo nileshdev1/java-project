@@ -48,7 +48,7 @@ public class OrderMethodExcelView extends AbstractXlsxView{
 			r.createCell(0).setCellValue(st.getOrderId());
 			r.createCell(1).setCellValue(st.getOrderMode());
 			r.createCell(2).setCellValue(st.getOrderCode());
-		//	r.createCell(3).setCellValue(st.getOrderAccept());
+			r.createCell(3).setCellValue(st.getOrderAccept().toString());
 			r.createCell(4).setCellValue(st.getDescription());
 		}
 	}

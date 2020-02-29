@@ -5,6 +5,7 @@ import java.util.List;
 import org.nk.model.ShipmentType;
 import org.nk.service.IShipmentTypeService;
 import org.nk.view.ShipmentTypeExcelView;
+import org.nk.view.ShipmentTypePdfView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -117,7 +118,7 @@ public class ShipmentTypeController {
 	}
 	
 	/*
-	 * 
+	 * it will show selected id details 
 	 */
 	@RequestMapping("/view")
 	public String showOneShipment(@RequestParam("sid")Integer id, Model model) {
@@ -129,13 +130,28 @@ public class ShipmentTypeController {
 	}
 	
 	/*
-	 * 
+	 * Excel Export
 	 */
 	@RequestMapping("/excel")
 	public ModelAndView showExcel() {
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new ShipmentTypeExcelView());
+		List<ShipmentType> list=service.getAllShipmentType();
+		m.addObject("list", list);
+		
+		return m;
+	}
+	
+	
+	/*
+	 * PDF Export
+	 */
+	@RequestMapping("/pdf")
+	public ModelAndView showPdf() {
+		
+		ModelAndView m=new ModelAndView();
+		m.setView(new ShipmentTypePdfView());
 		List<ShipmentType> list=service.getAllShipmentType();
 		m.addObject("list", list);
 		

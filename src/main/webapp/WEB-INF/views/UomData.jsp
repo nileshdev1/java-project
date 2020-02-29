@@ -11,7 +11,9 @@
 <h3>Welcome To UOM Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
-<a href="excel">Excel Export</a>
+<a href="excel">Excel Export</a> | 
+<a href="pdf">PDF Export</a> 
+
 <table border="1">
 <tr>
 	<th>ID</th>

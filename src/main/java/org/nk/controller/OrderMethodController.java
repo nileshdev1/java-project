@@ -3,9 +3,9 @@ package org.nk.controller;
 import java.util.List;
 
 import org.nk.model.OrderMethod;
-import org.nk.model.Uom;
 import org.nk.service.IOrderMethodService;
 import org.nk.view.OrderMethodExcelView;
+import org.nk.view.OrderMethodPdfView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -114,7 +114,7 @@ public class OrderMethodController {
 	}
 	
 	/*
-	 * 
+	 *it will show selected id details 
 	 */
 	@RequestMapping("/view")
 	public String showOneOrderMethod(@RequestParam("oid")Integer id, Model model) {
@@ -126,7 +126,7 @@ public class OrderMethodController {
 	}
 	
 	/*
-	 * 
+	 * Excel Export
 	 */
 	@RequestMapping("/excel")
 	public ModelAndView showExcel() {
@@ -138,5 +138,20 @@ public class OrderMethodController {
 		
 		return m;
 	}
+	
+	/*
+	 * PDF Export
+	 */
+	@RequestMapping("/pdf")
+	public ModelAndView showPdf() {
+		
+		ModelAndView m=new ModelAndView();
+		m.setView(new OrderMethodPdfView());
+		List<OrderMethod> list=service.getAllOrderMethod();
+		m.addObject("list", list);
+		
+		return m;
+	}
+
 
 }

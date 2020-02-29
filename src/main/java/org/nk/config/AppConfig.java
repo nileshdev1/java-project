@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.nk.model.ShipmentType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,6 +15,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -86,6 +86,13 @@ public class AppConfig {
 		irvs.setPrefix(env.getProperty("mvc.prefix"));
 		irvs.setSuffix(env.getProperty("mvc.suffix"));
 		return irvs;
+	}
+	
+	//Activate CMP
+	@Bean
+	public CommonsMultipartResolver multipartResolver() {
+		
+		return new CommonsMultipartResolver();
 	}
 
 }

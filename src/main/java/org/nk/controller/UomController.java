@@ -4,6 +4,7 @@ import java.util.List;
 import org.nk.model.Uom;
 import org.nk.service.IUomService;
 import org.nk.view.UomExcelView;
+import org.nk.view.UomPdfView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -112,7 +113,7 @@ public class UomController {
 	}
 	
 	/*
-	 * 
+	 * it will show selected id details 
 	 */
 	@RequestMapping("/view")
 	public String showOneUom(@RequestParam("uid")Integer id, Model model) {
@@ -124,13 +125,27 @@ public class UomController {
 	}
 	
 	/*
-	 * 
+	 * Excel Export 
 	 */
 	@RequestMapping("/excel")
 	public ModelAndView showExcel() {
 		
 		ModelAndView m=new ModelAndView();
 		m.setView(new UomExcelView());
+		List<Uom> list=service.getAllUom();
+		m.addObject("list", list);
+		
+		return m;
+	}
+	
+	/*
+	 * PDF Export
+	 */
+	@RequestMapping("/pdf")
+	public ModelAndView showPdf() {
+		
+		ModelAndView m=new ModelAndView();
+		m.setView(new UomPdfView());
 		List<Uom> list=service.getAllUom();
 		m.addObject("list", list);
 		

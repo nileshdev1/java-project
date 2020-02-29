@@ -8,34 +8,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome To OrderMethod Data Page</h3>
+<h3>Welcome To WHUSERTYPE Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
 <a href="excel">Excel Export</a> |
 <a href="pdf">PDF Export</a> 
 <table border="1">
 <tr>
-	<th>ORDER ID</th>
-	<th>ORDER MODE</th>
-	<th>ORDER CODE</th>
-	<th>ORDER TYPE</th>
-	<th>ORDER ACCEPT</th>
-	<th>NOTE</th>
+	<th>USER ID</th>
+	<th>USER TYPE</th>
+	<th>USER CODE</th>
+	<th>USER FOR</th>
+	<th>USER EMAIL</th>
+	<th>USER CONTECT</th>
+	<th>USER IDTYPE</th>
+	<th>OTHER ID</th>
+	<th>ID NUMBE</th>
 	<th colspan="3">OPERATION</th>
 </tr>
 
 <c:forEach items="${list}" var="ob">
 
 <tr>
-	<td>${ob.orderId}</td>
-	<td>${ob.orderMode}</td>
-	<td>${ob.orderCode}</td>
-	<td>${ob.orderType}</td>
-	<td>${ob.orderAccept}</td>
-	<td>${ob.description}</td>
-	<td><a href="delete?oid=${ob.orderId}">DELETE</a>
-	<td><a href="edit?oid=${ob.orderId}">EDIT</a>
-	<td><a href="view?oid=${ob.orderId}">VIEW</a>
+	<td>${ob.whUserId}</td>
+	<td>${ob.userType}</td>
+	<td>${ob.userCode}</td>
+	<td>${ob.userFor}</td>
+	<td>${ob.userEmail}</td>
+	<td>${ob.userContect}</td>
+	<td>${ob.userIdType}</td>
+	<td>${ob.other}</td>
+	<td>${ob.idNumber}</td>
+	<td><a href="delete?sid=${ob.whUserId}">DELETE</a>
+	<td><a href="edit?sid=${ob.whUserId}">EDIT</a>
+	<td><a href="view?sid=${ob.whUserId}">VIEW</a>
 	
 </tr>
 
