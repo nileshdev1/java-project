@@ -11,8 +11,8 @@
 <h3>Welcome To ShipmentType Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
-<a href="excel">Excel Export</a> |
-<a href="pdf">PDF Export</a>
+<a href="excel"><img src="../resources/image/excel.png" width="30" hight="40"/></a>    
+<a href="pdf"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table border="1">
 <tr>
 	<th>ID</th>
@@ -33,9 +33,9 @@
 	<td>${ob.enbShip}</td>
 	<td>${ob.shipGrade}</td>
 	<td>${ob.shipDesc}</td>
-	<td><a href="delete?sid=${ob.shipId}">DELETE</a>
-	<td><a href="edit?sid=${ob.shipId}">EDIT</a>
-	<td><a href="view?sid=${ob.shipId}">VIEW</a>
+	<td><a href="delete?sid=${ob.shipId}"><img src="../resources/image/delete.png"  width="30" hight="30"/></a>
+	<td><a href="edit?sid=${ob.shipId}"><img src="../resources/image/edit.png" width="30" hight="30"/></a>
+	<td><a href="view?sid=${ob.shipId}"><img src="../resources/image/view.png" width="30" hight="30"/></a>
 	
 </tr>
 

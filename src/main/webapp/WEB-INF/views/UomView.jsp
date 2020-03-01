@@ -9,8 +9,8 @@
 </head>
 <body>
 <h3>Welcome To UOM View Page</h3>
-<a href="excel?id=${ob.uomId}">Excel Export</a> |
-<a href="pdf?id=${ob.uomId}">PDF Export</a>
+<a href="excel?id=${ob.uomId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
+<a href="pdf?id=${ob.uomId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table border="1">
 <tr>
 	<th>ID</th><td>${ob.uomId}</td>

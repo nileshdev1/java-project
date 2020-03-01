@@ -11,8 +11,8 @@
 <h3>Welcome To UOM Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
-<a href="excel">Excel Export</a> | 
-<a href="pdf">PDF Export</a> 
+<a href="excel"><img src="../resources/image/excel.png"width="30" hight="30"/></a> | 
+<a href="pdf"><img src="../resources/image/pdf.png"width="30" hight="30"/></a> 
 
 <table border="1">
 <tr>
@@ -30,9 +30,9 @@
 	<td>${ob.uomType}</td>
 	<td>${ob.uomModel}</td>
 	<td>${ob.uomDesc}</td>
-	<td><a href="delete?uid=${ob.uomId}">DELETE</a>
-	<td><a href="edit?uid=${ob.uomId}">EDIT</a>
-	<td><a href="view?uid=${ob.uomId}">VIEW</a>
+	<td><a href="delete?uid=${ob.uomId}"><img src="../resources/image/delete.png"width="30" hight="30"/></a>
+	<td><a href="edit?uid=${ob.uomId}"><img src="../resources/image/edit.png"width="30" hight="30"/></a>
+	<td><a href="view?uid=${ob.uomId}"><img src="../resources/image/view.png"width="30" hight="30"/></a>
 	
 </tr>
 

@@ -11,8 +11,8 @@
 <h3>Welcome To OrderMethod Data Page</h3>
 <c:choose>
 <c:when test="${!empty list}">
-<a href="excel">Excel Export</a> |
-<a href="pdf">PDF Export</a> 
+<a href="excel"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
+<a href="pdf"><img src="../resources/image/pdf.png"width="30" hight="30"/></a> 
 <table border="1">
 <tr>
 	<th>ORDER ID</th>
@@ -33,9 +33,9 @@
 	<td>${ob.orderType}</td>
 	<td>${ob.orderAccept}</td>
 	<td>${ob.description}</td>
-	<td><a href="delete?oid=${ob.orderId}">DELETE</a>
-	<td><a href="edit?oid=${ob.orderId}">EDIT</a>
-	<td><a href="view?oid=${ob.orderId}">VIEW</a>
+	<td><a href="delete?oid=${ob.orderId}"><img src="../resources/image/delete.png"width="30" hight="30"/></a>
+	<td><a href="edit?oid=${ob.orderId}"><img src="../resources/image/edit.png"width="30" hight="30"/></a>
+	<td><a href="view?oid=${ob.orderId}"><img src="../resources/image/view.png"width="30" hight="30"/></a>
 	
 </tr>
 

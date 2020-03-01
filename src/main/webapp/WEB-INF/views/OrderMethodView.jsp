@@ -9,8 +9,8 @@
 </head>
 <body>
 <h3>Welcome To ORDER METHOD View Page</h3>
-<a href="excel?id=${ob.orderId}">Excel Export</a> |
-<a href="pdf?id=${ob.orderId}">PDF Export</a>
+<a href="excel?id=${ob.orderId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
+<a href="pdf?id=${ob.orderId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table border="1">
 <tr>
 	<th>ORDER ID</th><td>${ob.orderId}</td>
