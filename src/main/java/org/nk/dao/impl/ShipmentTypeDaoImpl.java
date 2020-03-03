@@ -42,5 +42,14 @@ public class ShipmentTypeDaoImpl implements IShipmentTypeDao {
 
 		ht.update(ob);
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object[]> getShipmentCount() {
+		String hql=" SELECT shipMode,COUNT(shipMode) "
+				+" FROM org.nk.model.ShipmentType "
+				+" GROUP BY shipMode ";
+		return (List<Object[]>)ht.find(hql);
+	}
 
 }

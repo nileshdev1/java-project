@@ -3,8 +3,11 @@ package org.nk.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
 import org.nk.model.ShipmentType;
 import org.nk.service.IShipmentTypeService;
+import org.nk.util.ShipmentTypeUtil;
 import org.nk.view.ShipmentTypeExcelView;
 import org.nk.view.ShipmentTypePdfView;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,12 @@ public class ShipmentTypeController {
 
 	@Autowired
 	private IShipmentTypeService service;
+	
+	@Autowired
+	private ServletContext context;
 
+	@Autowired
+	private ShipmentTypeUtil util;
 
 	/*
 	 * This method is use to 
@@ -174,5 +182,21 @@ public class ShipmentTypeController {
 			
 		return m;
 	}
+	
+	/*
+	 * Export Charts Page
+	 */
+	@RequestMapping("/charts")
+	public String showCharts() {
+		
+		List<Object[]> list=service.getShipmentCount();
+		
+		String path=context.getRealPath("/");
+		util.generatePie(path, list);
+		util.generateBar(path, list);
+		
+		return "ShipmentTypeCharts";
+	}
+	
 
 }
