@@ -11,8 +11,8 @@
 <form:form action="save" method="POST" modelAttribute="orderMethod">
 <h3>Welcome To OrderMethod RegisterPage</h3>
 <pre>
-OrderMode: <form:radiobutton path="orderMode" value="sale"/>Sale
-		   <form:radiobutton path="orderMode" value="purchase"/>Purchase
+OrderMode: <form:radiobutton path="orderMode" value="Sale"/>Sale
+		   <form:radiobutton path="orderMode" value="Purchase"/>Purchase
 		   
 Order Code: <form:input path="orderCode"/>
 

@@ -6,13 +6,15 @@ import org.nk.model.OrderMethod;
 
 public interface IOrderMethodService {
 
-	Integer saveOrderMethod(OrderMethod ob);
+	public Integer saveOrderMethod(OrderMethod ob);
 
-	List<OrderMethod> getAllOrderMethod();
+	public List<OrderMethod> getAllOrderMethod();
 
-	void deleteOrderMethod(Integer id);
+	public void deleteOrderMethod(Integer id);
 
-	OrderMethod getOneOrderMethod(Integer id);
+	public OrderMethod getOneOrderMethod(Integer id);
 
-	void updateOrderMethod(OrderMethod ob);
+	public void updateOrderMethod(OrderMethod ob);
+	
+	public List<Object[]> getOrderIdAndCode(String mode);
 }

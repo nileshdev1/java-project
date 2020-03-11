@@ -37,11 +37,25 @@ public class OrderMethodDaoImpl implements IOrderMethodDao {
 
 		return ht.get(OrderMethod.class,id);
 	}
+	
 
 	@Override
 	public void updateOrderMethod(OrderMethod ob) {
 
 		ht.update(ob);
+	}
+	
+	@Override
+	public List<Object[]> getOrderIdAndCode(String mode) {
+
+		String hql=" select orderId, orderCode from org.nk.model.OrderMethod where orderMode=?0 ";
+
+		@SuppressWarnings("unchecked")
+		List<Object[]> list=(List<Object[]>) ht.find(hql, mode);
+
+		return list;
+
+		
 	}
 
 }

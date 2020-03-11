@@ -48,5 +48,11 @@ public class UomServiceImpl implements IUomService {
 
 		dao.updateUom(ob);
 	}
+	
+	@Transactional
+	public List<Object[]> getOrderIdAndModel() {
+
+		return dao.getUomIdAndModel();
+	}
 
 }

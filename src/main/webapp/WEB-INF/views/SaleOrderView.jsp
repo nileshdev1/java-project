@@ -15,35 +15,39 @@
 
 			<div
 				class="card-header bg-primary text-center text-white text-uppercase">
-				<h3>Welcome To ShipmentType View Page</h3>
+				<h3>Welcome To SaleOrder View Page</h3>
 			</div>
 
 
 			<div class="card-body">
 
-<a href="excel?id=${ob.shipId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
-<a href="pdf?id=${ob.shipId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
+<a href="excel?id=${ob.saleOid}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
+<a href="pdf?id=${ob.saleOid}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table class="table">
 							<thead>
 								<tr>
 						
-	<th>ID</th><td>${ob.shipId}</td>
+	<th>ID</th><td>${ob.saleOid}</td>
 </tr>
 <tr>
-	<th>MODE</th><td>${ob.shipMode}</td>
+	<th>CODE</th><td>${ob.saleOcode}</td>
 </tr>
 <tr>
-	<th>CODE</th><td>${ob.shipCode}</td>
+	<th>REF NUMBER</th><td>${ob.refNumber}</td>
 </tr>
 <tr>
-	<th>ENABLE</th><td>${ob.enbShip}</td>
+	<th>MODE</th><td>${ob.stockMode}</td>
 </tr>
 <tr>
-	<th>GRADE</th><td>${ob.shipGrade}</td>
+	<th>STOCK SOURCE</th><td>${ob.stockSource}</td>
 </tr>
 <tr>
-	<th>Note</th><td>${ob.shipDesc}</td>
+	<th>STATUS</th><td>${ob.status}</td>
 </tr>
+<tr>
+	<th>DESCRIPTION</th><td>${ob.description}</td>
+</tr>
+
 </thead>
 </table>
 </div>

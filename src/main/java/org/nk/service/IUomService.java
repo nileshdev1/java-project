@@ -6,14 +6,15 @@ import org.nk.model.Uom;
 
 public interface IUomService {
 
-	Integer saveUom(Uom ob);
+	public Integer saveUom(Uom ob);
 
-	List<Uom> getAllUom();
+	public List<Uom> getAllUom();
 
-	void deleteUom(Integer id);
+	public void deleteUom(Integer id);
 
-	Uom getOneUom(Integer id);
+	public Uom getOneUom(Integer id);
 
-	void updateUom(Uom ob);
-
+	public void updateUom(Uom ob);
+	
+	public List<Object[]> getOrderIdAndModel();
 }

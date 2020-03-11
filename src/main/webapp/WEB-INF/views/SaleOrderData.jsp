@@ -17,7 +17,7 @@
 
 			<div
 				class="card-header bg-primary text-center text-white text-uppercase">
-				<h3>Welcome To ShipmentType Data Page</h3>
+				<h3>Welcome To SaleOrder Data Page</h3>
 			</div>
 
 
@@ -35,11 +35,12 @@
 							<thead>
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">MODE</th>
 									<th scope="col">CODE</th>
-									<th scope="col">ENABLE</th>
-									<th scope="col">GRADE</th>
-									<th scope="col">NOTE</th>
+									<th scope="col">REF NUMBER</th>
+									<th scope="col">STOCK MODE</th>
+									<th scope="col">STOCK SOURCE</th>
+									<th scope="col">STATUS</th>
+									<th scope="col">DISCRIPTION</th>
 									<th colspan="3">OPERATION</th>
 								</tr>
 							</thead>
@@ -47,17 +48,18 @@
 								<c:forEach items="${list}" var="ob">
 
 									<tr>
-										<td>${ob.shipId}</td>
-										<td>${ob.shipMode}</td>
-										<td>${ob.shipCode}</td>
-										<td>${ob.enbShip}</td>
-										<td>${ob.shipGrade}</td>
-										<td>${ob.shipDesc}</td>
-										<td><a href="delete?sid=${ob.shipId}"><img
+										<td>${ob.saleOid}</td>
+										<td>${ob.saleOcode}</td>
+										<td>${ob.refNumber}</td>
+										<td>${ob.stockMode}</td>
+										<td>${ob.stockSource}</td>
+										<td>${ob.status}</td>
+										<td>${ob.description}</td>
+										<td><a href="delete?sid=${ob.saleOid}"><img
 												src="../resources/image/delete.png" width="30" hight="30" /></a>
-										<td><a href="edit?sid=${ob.shipId}"><img
+										<td><a href="edit?sid=${ob.saleOid}"><img
 												src="../resources/image/edit.png" width="30" hight="30" /></a>
-										<td><a href="view?sid=${ob.shipId}"><img
+										<td><a href="view?sid=${ob.saleOid}"><img
 												src="../resources/image/view.png" width="30" hight="30" /></a>
 									</tr>
 
