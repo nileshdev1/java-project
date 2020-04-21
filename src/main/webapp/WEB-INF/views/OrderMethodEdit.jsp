@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false" %>
-     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-      
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,15 +9,136 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome To ORDER METHOD Edit Page</h3>
-<form:form action="update" method="post" modelAttribute="ordermethod">
-<pre>
-ORDER ID:  <form:input path="orderId" readonly="true"/>
 
-OrderMode: <form:radiobutton path="orderMode" value="sale"/>Sale
-		   <form:radiobutton path="orderMode" value="purchase"/>Purchase
+	<%@include file="UserMenu.jsp"%>
+
+	<div class="container">
+		<div class="card">
+
+			<div
+				class="card-header bg-info text-center text-white text-uppercase">
+				<h3>Welcome To Order Method Register Page</h3>
+			</div>
+
+			<div class="card-body">
+				<form:form action="update" method="POST"
+					modelAttribute="ordermethod">
+
+
+
+					<div class="row">
+						<div class="col-4">
+							<label="orderId">Order ID</label>
+						</div>
+						<div class="col-4">
+							<form:input path="orderId" readonly="true" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="shipMode">OrderMode</label>
+						</div>
+
+						<div class="col-4">
+							<form:radiobutton path="orderMode" value="sale" />
+							Sale
+		   					<form:radiobutton path="orderMode" value="purchase" />
+		   					Purchase
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-4">
+							<label for="shipMode">Order Code</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="orderCode" />
+						</div>
+					</div>
+					<div class="row">
+
+						<div class="col-4">
+							<label for="shipMode">OrderType</label>
+						</div>
+
+						<div class="col-4">
+							<form:select path="orderType">s
+		<form:option value="">-SELECT-</form:option>
+								<form:option value="fifo">FIFO</form:option>
+								<form:option value="lifo">LIFO</form:option>
+								<form:option value="fcfo">FCFO</form:option>
+								<form:option value="fefo">FEFO</form:option>
+							</form:select>
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<label for="shipMode">OrderAccept</label>
+						</div>
+
+						<div class="col-4">
+							<form:checkbox path="orderAccept" value="acceptreturn" />
+							AcceptReturn
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-4">
+							<label for="shipMode">Description</label>
+						</div>
+
+						<div class="col-4">
+							<form:textarea path="description" />
+						</div>
+					</div>
+
+
+
+
+
+					<div class="row">
+						<div class="col-4"></div>
+
+						<div class="col-4">
+							<input type="submit" value="update" class="btn btn-success" /> <input
+								type="reset" value="Clear" class="btn btn-danger" />
+						</div>
+
+					</div>
+				</form:form>
+			</div>
+			<div
+				class="card-footer bg-secondary text-center text-white text-uppercase">
+				${message }</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<%-- <h3>Welcome To ORDER METHOD Edit Page</h3>
+	<form:form action="update" method="post" modelAttribute="ordermethod">
+		<pre>
+ORDER ID:  <form:input path="orderId" readonly="true" />
+
+OrderMode: <form:radiobutton path="orderMode" value="sale" />Sale
+		   <form:radiobutton path="orderMode" value="purchase" />Purchase
 		   
-Order Code: <form:input path="orderCode"/>
+Order Code: <form:input path="orderCode" />
 
 OrderType: <form:select path="orderType">
 		<form:option value="">-SELECT-</form:option>
@@ -27,14 +148,14 @@ OrderType: <form:select path="orderType">
 		<form:option value="fefo">FEFO</form:option>
 </form:select>
 
-OrderAccept: <form:checkbox path="orderAccept" value="acceptreturn"/>AcceptReturn
+OrderAccept: <form:checkbox path="orderAccept" value="acceptreturn" />AcceptReturn
 
-Description:  <form:textarea path="description"/>
+Description:  <form:textarea path="description" />
 
 <input type="submit" value="update" />
 
 </pre>
 
-</form:form>
+	</form:form> --%>
 </body>
 </html>

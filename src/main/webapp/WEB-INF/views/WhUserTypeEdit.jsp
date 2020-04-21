@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false" %>
-     <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-      
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,131 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome To ORDER METHOD Edit Page</h3>
-<form:form action="update" method="post" modelAttribute="whUserType">
-<pre>
-WHUSER ID:  <form:input path="whUserId" readonly="true"/>
+	<%@include file="UserMenu.jsp"%>
 
-User Type: <form:radiobutton path="userType" value="vender"/>Vender
-		   <form:radiobutton path="userType" value="customer"/>Customer
-		   
-User Code: <form:input path="userCode"/>
+	<div class="container">
+		<div class="card">
 
-USER FOR: <form:select path="userFor">
-		<form:option value="ps">Purchase/Sale</form:option>
-</form:select>
+			<div
+				class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>Welcome To ORDER METHOD Edit Page</h3>
+			</div>
 
-USER EMAIL: <form:input path="userEmail"/>
+			<div class="card-body">
+				<form:form action="update" method="POST" modelAttribute="whUserType">
 
-USER CONTECT: <form:input path="userContect"/>
 
-USER ID TYPE: <form:select path="userIdType">
-		<form:option value="">-SELECT-</form:option>
-		<form:option value="pancard">PAN CARD</form:option>
-		<form:option value="aadhar">AADHAR</form:option>
-		<form:option value="voterid">VOTERID</form:option>
-		<form:option value="other">OTHER</form:option>
-</form:select>
+					<div class="row">
+						<div class="col-4">
+							<label for="">WHUSER ID</label>
+						</div>
 
-IF OTHER: <form:input path="other"/>
+						<div class="col-4">
+							<form:input path="whUserId" readonly="true" />
+						</div>
+					</div>
 
-ID NUMBER: <form:input path="idNumber"/>
 
-<input Type="submit" value=update>
-</pre>
+					<div class="row">
+						<div class="col-4">
+							<label for="">User Type</label>
+						</div>
 
-</form:form>
+						<div class="col-4">
+							<form:radiobutton path="userType" value="vender" />
+							Vender
+							<form:radiobutton path="userType" value="customer" />
+							Customer
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">User Code</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="userCode" />
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">USER FOR</label>
+						</div>
+
+						<div class="col-4">
+							<form:select path="userFor">
+								<form:option value="ps">Purchase/Sale</form:option>
+							</form:select>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">USER EMAIL</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="userEmail" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">USER CONTECT</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="userContect" />
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">USER ID TYPE</label>
+						</div>
+
+						<div class="col-4">
+							<form:select path="userIdType">
+								<form:option value="">-SELECT-</form:option>
+								<form:option value="pancard">PAN CARD</form:option>
+								<form:option value="aadhar">AADHAR</form:option>
+								<form:option value="voterid">VOTERID</form:option>
+								<form:option value="other">OTHER</form:option>
+							</form:select>
+						</div>
+					</div>
+
+
+<div class="row">
+						<div class="col-4">
+							<label for="">IF OTHER</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="other" />
+						</div>
+					</div>
+					
+					
+					
+					<div class="row">
+						<div class="col-4">
+							<label for="">ID NUMBER</label>
+						</div>
+
+						<div class="col-4">
+							<input Type="submit" value=update>
+						</div>
+					</div>
+					
+				</form:form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -54,4 +54,10 @@ public class ShipmentTypeServiceImpl implements IShipmentTypeService {
 
 		return dao.getShipmentCount();
 	}
+	
+	@Override
+	public List<Object[]> getShipIdandCode() {
+
+		return dao.getShipIdandCode();
+	}
 }

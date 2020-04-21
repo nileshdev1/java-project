@@ -3,8 +3,8 @@ package org.nk.controller;
 import java.util.List;
 import java.util.Map;
 
-import org.nk.model.SaleOrder;
-import org.nk.service.ISaleOrderService;
+import org.nk.model.PurchaseOrder;
+import org.nk.service.IPurchaseOrderService;
 import org.nk.service.IShipmentTypeService;
 import org.nk.service.IWhUserTypeService;
 import org.nk.util.CommonUtil;
@@ -17,19 +17,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/saleorder")
-public class SaleOrderController {
-
+@RequestMapping("purchaseorder")
+public class PurchaseOrderController {
+	
 	@Autowired
-	private ISaleOrderService service;
+	private IPurchaseOrderService service;
 
 	@Autowired
 	private IShipmentTypeService shipservice;
-
+	
 	
 	@Autowired
 	private IWhUserTypeService whservice;
-	 
 	
 	@SuppressWarnings("unused")
 	private void commonUi(Model model) {
@@ -39,10 +38,9 @@ public class SaleOrderController {
 		model.addAttribute("shipMap", shipMap);
 		
 		
-		List<Object[]> whlist=whservice.getUserType("customer");
+		List<Object[]> whlist=whservice.getUserType("vender");
 		Map<Integer,String> whmap=CommonUtil.convert(whlist); 
 		model.addAttribute("whmap", whmap);
-		 
 		
 		
 	}
@@ -52,10 +50,12 @@ public class SaleOrderController {
 	 * of ShipmentType
 	 */
 	@RequestMapping("/register")
-	public String showRegPage( @ModelAttribute SaleOrder saleOrder,Model model) {
+	public String showRegPage( Model model) {
 
+		model.addAttribute("purchaseOrder", new PurchaseOrder());
 		commonUi(model);
-		return "SaleOrderRegister";
+		return "PurchaseOrderRegister";
+		
 	}
 
 	/*
@@ -64,18 +64,19 @@ public class SaleOrderController {
 	 */
 
 	@RequestMapping(value="/save", method=RequestMethod.POST) 
-	public String saveSaleOrder(
+	public String savePurchaseOrder(
 
-			@ModelAttribute SaleOrder saleOrder,Model model) {
+			@ModelAttribute PurchaseOrder purchaseOrder,Model model) {
 
-		Integer id=service.saveSaleOrder(saleOrder); 
+		Integer id=service.savePurchaseOrder(purchaseOrder); 
 
-		String message="SaleOrder "+id+" saved";
+		String message="PurchaseOrder "+id+" saved";
 
 		model.addAttribute("message",message);
-
+		model.addAttribute("purchaseorder", new PurchaseOrder());
 		commonUi(model);
-		return "SaleOrderRegister"; 
+
+		return "PurchaseOrderRegister"; 
 	}
 
 	/*
@@ -84,15 +85,13 @@ public class SaleOrderController {
 	 * and display all records
 	 */
 	@RequestMapping("/all")
-	public String getAllSaleOrder( Model model) {
+	public String getAllPurchaseOrder( Model model) {
 
-		List<SaleOrder> list=service.getAllSaleOrder();
-		System.out.println(list.toString());
+		List<PurchaseOrder> list=service.getAllPurchaseOrder();
 
 		model.addAttribute("list",list);
-		System.out.println(model.getAttribute("msg"));
 
-		return "SaleOrderData";
+		return "PurchaseOrderData";
 	}
 
 	/*
@@ -100,17 +99,17 @@ public class SaleOrderController {
 	 * the particular record given id
 	 */
 	@RequestMapping("/delete")
-	public String deleteSaleOrder(
-			@RequestParam("sid")Integer id,Model model) {
+	public String deletePurchaseOrder(
+			@RequestParam("oid")Integer id,Model model) {
 
-		service.deleteSaleOrder(id);
+		service.deletePurchaseOrder(id);
 		String message="Record Deleted Sucessfully";
 		model.addAttribute("message",message);
 
-		List<SaleOrder> list=service.getAllSaleOrder();
+		List<PurchaseOrder> list=service.getAllPurchaseOrder();
 		model.addAttribute("list",list);
 
-		return "SaleOrderData";
+		return "PurchaseOrderData";
 	}
 
 	/*
@@ -118,12 +117,12 @@ public class SaleOrderController {
 	 * given id
 	 */
 	@RequestMapping("/edit")
-	public String showEditPage(@RequestParam("sid")Integer id, Model model) {
+	public String showEditPage(@RequestParam("oid")Integer id, Model model) {
 
-		SaleOrder st=service.getOneSaleOrder(id);
-		model.addAttribute("saleOrder", st);
+		PurchaseOrder st=service.getOnePurchaseOrder(id);
+		model.addAttribute("purchaseOrder", st);
 
-		return "SaleOrderEdit";	
+		return "PurchaseOrderEdit";	
 	}
 
 	/*
@@ -131,28 +130,31 @@ public class SaleOrderController {
 	 *update Existing content  
 	 */
 	@RequestMapping("/update")
-	public String updateSaleOrder(@ModelAttribute SaleOrder saleOrder, Model model ) {
+	public String updatePurchaseOrder(@ModelAttribute PurchaseOrder purchaseOrder, Model model ) {
 		
-		service.updateSaleOrder(saleOrder);
-		String message="SaleOrder"+saleOrder.getSaleOid()+" Updeted";
+		service.updatePurchaseOrder(purchaseOrder);
+		String message="SaleOrder"+purchaseOrder.getPoid()+" Updeted";
 		model.addAttribute("message",message);
-		List<SaleOrder> list=service.getAllSaleOrder();
+		List<PurchaseOrder> list=service.getAllPurchaseOrder();
 		model.addAttribute("list", list);
 
-		return "SaleOrderData";
+		return "PurchaseOrderData";
 	}
 	
 	/*
 	 * it will show selected id details 
 	 */
 	@RequestMapping("/view")
-	public String showOneSaleOrder(@RequestParam("sid")Integer id, Model model) {
+	public String showOnePurchaseOrder(@RequestParam("oid")Integer id, Model model) {
 		
-		SaleOrder st=service.getOneSaleOrder(id);
+		PurchaseOrder st=service.getOnePurchaseOrder(id);
 		model.addAttribute("ob",st);
 		
-		return "SaleOrderView";
+		return "PurchaseOrderView";
 	}
 	
 	
+	
 }
+
+

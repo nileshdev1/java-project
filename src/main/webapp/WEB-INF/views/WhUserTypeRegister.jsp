@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,40 +8,145 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form:form action="save" method="POST" modelAttribute="whUserType">
-<h3>Welcome To WhUserType RegisterPage</h3>
-<pre>
-User Type: <form:radiobutton path="userType" value="vender"/>Vender
-		   <form:radiobutton path="userType" value="customer"/>Customer
-		   
-User Code: <form:input path="userCode"/>
+	<%@include file="UserMenu.jsp"%>
 
-USER FOR: <form:select path="userFor">
-		<form:option value="ps">Purchase/Sale</form:option>
-</form:select>
+	<div class="container">
+		<div class="card">
 
-USER EMAIL: <form:input path="userEmail"/>
+			<div
+				class="card-header bg-info text-center text-white text-uppercase">
+				<h3>WELCOME TO WHUSERTYPE REGISTRATION PAGE</h3>
+			</div>
 
-USER CONTECT: <form:input path="userContect"/>
+			<div class="card-body">
+				<form:form action="save" method="POST" modelAttribute="whUserType">
 
-USER ID TYPE: <form:select path="userIdType">
-		<form:option value="">-SELECT-</form:option>
-		<form:option value="pancard">PAN CARD</form:option>
-		<form:option value="aadhar">AADHAR</form:option>
-		<form:option value="voterid">VOTERID</form:option>
-		<form:option value="other">OTHER</form:option>
-</form:select>
+					<div class="row">
+						<div class="col-4">
+							<label for="usertype"> USER TYPE</label>
+						</div>
+						<div class="col-4">
+							<input type="radio" name="usertype" id="usertype1" value="vender" />VENDER
+							<input type="radio" name="usertype" id="usertype2" value="customer" />CUSTOMER
+						</div>
+						<div class="col-4">
+							<span id="userTypeError"></span>
+						</div>
+					</div>
 
-IF OTHER: <form:input path="other"/>
+					<div class="row">
+						<div class="col-4">
+							<label for="userCode">USER CODE</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="userCode" id="userCode"
+								class="form-control" placeholder="Enter User Code" />
+						</div>
+						<div class="col-4">
+							<span id="userCodeError"></span>
+						</div>
+					</div>
 
-ID NUMBER: <form:input path="idNumber"/>
+					<div class="row">
+						<div class="col-4">
+							<label>USER FOR</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="userFor" id="userFor"
+								readonly="readonly" class="form-control" />
+						</div>
+						<div class="col-4"></div>
+					</div>
 
-<input Type="submit" value=create>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="userMail">USER EMAIL</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="userEmail" id="userMail"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="userMailError"></span>
+						</div>
+					</div>
 
 
-</pre>
+					<div class="row">
+						<div class="col-4">
+							<label for="userContact">USER CONTACT</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="userContect" id="userContact"
+								class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="userContactError"></span>
+						</div>
+					</div>
 
-</form:form>
-${message }
+
+					<div class="row">
+						<div class="col-4">
+							<label for="idType">USER ID TYPE</label>
+						</div>
+						<div class="col-4">
+							<select name="userIdType" id="idType" class="form-control">
+								<option value="">-SELECT-</option>
+								<option value="PAN">PAN</option>
+								<option value="AADHAR">AADHAR</option>
+								<option value="VOTERID">VOTERID</option>
+								<option value="OTHER">OTHER</option>
+							</select>
+						</div>
+						<div class="col-4">
+							<span id="idTypeError"></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="ifOther">*IF OTHER</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="ifOther" id="ifOther"
+								class="form-control" readonly />
+						</div>
+						<div class="col-4">
+							<span id="ifOtherError"></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="idNum">ID NUMBER</label>
+						</div>
+						<div class="col-4">
+							<input type="text" name="idNumber" id="idNum" class="form-control" />
+						</div>
+						<div class="col-4">
+							<span id="idNumError"></span>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<input type="submit" value="create" class="btn btn-success" /> 
+							<input type="reset" value="Clear" class="btn btn-danger" />
+						</div>
+					</div>
+					
+				</form:form>
+			</div>
+			<div class="card-footer bg-secondary text-center text-white text-uppercase">
+				${message }
+			</div>
+		</div>
+	</div>
 </body>
 </html>

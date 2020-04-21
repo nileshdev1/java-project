@@ -6,15 +6,17 @@ import org.nk.model.ShipmentType;
 
 public interface IShipmentTypeService {
 
-	Integer saveShipmentType(ShipmentType ob);
+	public Integer saveShipmentType(ShipmentType ob);
 	
-	List<ShipmentType> getAllShipmentType();
+	public List<ShipmentType> getAllShipmentType();
 	
-	void deleteShipment(Integer id);
+	public void deleteShipment(Integer id);
 	
-	ShipmentType getOneShipmentType(Integer id);
+	public ShipmentType getOneShipmentType(Integer id);
 	
-	void updateShipmentType(ShipmentType ob);
+	public void updateShipmentType(ShipmentType ob);
 	
 	public List<Object[]> getShipmentCount();
+	
+	public List<Object[]> getShipIdandCode();
 }

@@ -9,27 +9,83 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome To UOM Edit Page</h3>
-<form:form action="update" method="post" modelAttribute="uom">
-<pre>
-UOM ID:  <form:input path="uomId" readonly="true"/>
+<%@include file="UserMenu.jsp"%>
 
-UOM Type: 
-		<form:select path="uomType">
-		<form:option value=" ">-SELECT-</form:option>
-		<form:option value="Packing">PACKING</form:option>
-		<form:option value="NoPacking">NO-PACKING</form:option>
-		<form:option value="">-NA-</form:option>
-</form:select>
 
-UOM MODEL: <form:input path="uomModel" />
 
-Description:  <form:textarea path="uomDesc" />
+	<div class="container">
+		<div class="card">
 
-<input type="submit" value="update" />
+			<div
+				class="card-header bg-info text-center text-white text-uppercase">
+				<h3>Welcome To UOM Edit Page</h3>
+			</div>
 
-</pre>
+			<div class="card-body">
+				<form:form action="update" method="POST" modelAttribute="uom">
 
-</form:form>
+
+	<div class="row">
+						<div class="col-4">
+							<label for="shipMode">UOM ID</label>
+						</div>
+				<div class="col-4">
+					<form:input path="uomId" readonly="true"/>
+				</div>
+				</div>
+				
+					<div class="row">
+						<div class="col-4">
+							<label for="">UOM Type</label>
+						</div>
+
+						<div class="col-4">
+							<form:select path="uomType">
+								<form:option value=" ">-SELECT-</form:option>
+								<form:option value="Packing">PACKING</form:option>
+								<form:option value="NoPacking">NO-PACKING</form:option>
+								<form:option value="">-NA-</form:option>
+							</form:select>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">UOM MODEL</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="uomModel" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">DESCRIPTION</label>
+						</div>
+
+						<div class="col-4">
+							<form:textarea path="uomDesc" />
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4"></div>
+
+						<div class="col-4">
+							<input type="submit" value="Update" class="btn btn-success" /> <input
+								type="reset" value="Clear" class="btn btn-danger" />
+						</div>
+					</div>
+
+				</form:form>
+			</div>
+			<div
+				class="card-footer bg-secondary text-center text-white text-uppercase">
+				${message }</div>
+		</div>
+	</div>
 </body>
 </html>

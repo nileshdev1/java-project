@@ -10,34 +10,94 @@
 </head>
 <body>
 	<%@include file="UserMenu.jsp"%>
-	
+
 	<div class="container">
 		<div class="card">
 
 			<div
 				class="card-header bg-info text-center text-white text-uppercase">
-				<h3>Welcome To ShipmentType Register Page</h3>
+				<h3>Welcome To PurchaseOrder Register Page</h3>
 			</div>
 
 			<div class="card-body">
-				<form:form action="save" method="POST" modelAttribute="shipmentType">
-				
-				
+				<form:form action="save" method="POST"
+					modelAttribute="purchaseOrder">
+
+
 					<div class="row">
 						<div class="col-4">
-							<label for="shipMode">SHIPMENT MODE</label>
+							<label for="">ORDER CODE</label>
 						</div>
-						
+
 						<div class="col-4">
-							<form:select path="shipMode" class="form-control">
-								<form:option value=" ">-SELECT-</form:option>
-								<form:option value="Air">Air</form:option>
-								<form:option value="Truck">Truck</form:option>
-								<form:option value="Ship">Ship</form:option>
-								<form:option value="Train">Train</form:option>
-							</form:select>
+							<form:input path="orderCode" />
 						</div>
-						
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">SHIPMENT CODE</label>
+						</div>
+
+						<div class="col-4">
+							
+								<form:select path="shipob.shipId">
+								<form:option value="">-SELECT</form:option>
+								<form:options items="${shipMap}" />
+								</form:select>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-4">
+							<label for="">VENDER CODE</label>
+						</div>
+
+						<div class="col-4">
+							
+								<form:select path="whob.whUserId">
+								<form:option value="">-SELECT</form:option>
+								<form:options items="${whmap}" />
+								</form:select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">REF. NUMBER</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="refNo" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">QUALITY CHECK</label>
+						</div>
+
+						<div class="col-4">
+							<form:radiobutton path="qltyCheck" value="required" />
+							REQUIRED
+							<form:radiobutton path="qltyCheck" value="notrequired" />
+							NOT-REQUIRED
+
+						</div>
+
+						<div class="col-4"></div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-4">
+							<label for="">DEFAULT STATUS</label>
+						</div>
+
+						<div class="col-4">
+							<form:input path="status" value="OPEN" />
+						</div>
+
 						<div class="col-4">
 							<!-- Error Message -->
 						</div>
@@ -46,72 +106,19 @@
 
 					<div class="row">
 						<div class="col-4">
-							<label for="shipCode">SHIPMENT CODE</label>
+							<label for="">DESCRIPTION</label>
 						</div>
-						
+
 						<div class="col-4">
-							<form:input path="shipCode" />
+							<form:textarea path="description" />
 						</div>
-						
-						<div class="col-4">
-							<!-- Error Message -->
-						</div>
-					</div>
 
-
-					<div class="row">
-						<div class="col-4">
-							<label for="enbShip">ENABLE SHIPMENT</label>
-						</div>
-						
-						<div class="col-4">
-							<form:select path="enbShip">
-								<form:option value=" ">-SELECT-</form:option>
-								<form:option value="yes">YES</form:option>
-								<form:option value="no">NO</form:option>
-							</form:select>
-						</div>
-						
-						<div class="col-4"></div>
-					</div>
-
-
-
-					<div class="row">
-						<div class="col-4">
-							<label for="shipGrad">SHIPMENT GRADE</label>
-						</div>
-						
-						<div class="col-4">
-							<form:radiobutton path="shipGrade" value="A" />
-							A Grade:
-							<form:radiobutton path="shipGrade" value="B" />
-							B Grade:
-							<form:radiobutton path="shipGrade" value="C" />
-							C Grade:
-						</div>
-						
-						<div class="col-4"></div>
-					</div>
-
-
-
-
-					<div class="row">
-						<div class="col-4">
-							<label for="shipDesc">DESCRIPTION</label>
-						</div>
-						
-						<div class="col-4">
-							<form:textarea path="shipDesc" />
-						</div>
-						
 						<div class="col-4"></div>
 					</div>
 
 					<div class="row">
 						<div class="col-4"></div>
-						
+
 						<div class="col-4">
 							<input type="submit" value="create" class="btn btn-success" /> <input
 								type="reset" value="Clear" class="btn btn-danger" />
@@ -122,8 +129,7 @@
 			</div>
 			<div
 				class="card-footer bg-secondary text-center text-white text-uppercase">
-				${message }
-			</div>
+				${message }</div>
 		</div>
 	</div>
 </body>

@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +29,13 @@ public class SaleOrder {
 	@Column(name="saledesc")
 	private String description;
 	
+	@ManyToOne
+	@JoinColumn(name="shipidfk")
+	private ShipmentType shipob ;
+	
+	@ManyToOne
+	@JoinColumn(name="whidfk")
+	private WhUserType whob ;
 	
 	public SaleOrder() {
 		super();
@@ -108,12 +117,37 @@ public class SaleOrder {
 	}
 
 
+	public ShipmentType getShipob() {
+		return shipob;
+	}
+
+
+	public void setShipob(ShipmentType shipob) {
+		this.shipob = shipob;
+	}
+
+
+	public WhUserType getWhob() {
+		return whob;
+	}
+
+
+	public void setWhob(WhUserType whob) {
+		this.whob = whob;
+	}
+
+
 	@Override
 	public String toString() {
 		return "SaleOrder [saleOid=" + saleOid + ", saleOcode=" + saleOcode + ", refNumber=" + refNumber
 				+ ", stockMode=" + stockMode + ", stockSource=" + stockSource + ", status=" + status + ", description="
-				+ description + "]";
+				+ description + ", shipob=" + shipob + ", whob=" + whob + "]";
 	}
+
+
+	
+
+
 	
 	
 	

@@ -51,5 +51,14 @@ public class ShipmentTypeDaoImpl implements IShipmentTypeDao {
 				+" GROUP BY shipMode ";
 		return (List<Object[]>)ht.find(hql);
 	}
+	
+	@Override
+	public List<Object[]> getShipIdandCode() {
+
+		String hql=" select shipId,shipCode from org.nk.model.ShipmentType ";
+		
+		List<Object[]> list=(List<Object[]>) ht.find(hql);
+		return list;
+	}
 
 }

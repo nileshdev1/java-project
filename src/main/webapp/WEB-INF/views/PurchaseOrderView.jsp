@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<%@include file="UserMenu.jsp"%>
 
 	<div class="container">
@@ -16,60 +15,48 @@
 
 			<div
 				class="card-header bg-primary text-center text-white text-uppercase">
-				<h3>Welcome To WhUserType View Page</h3>
+				<h3>Welcome To PurchaseOrder View Page</h3>
 			</div>
 
 
 			<div class="card-body">
 
-				<a href="excel?id=${ob.whUserId}"><img
+				<a href="excel?id=${ob.poid}"><img
 					src="../resources/image/excel.png" width="30" hight="30" /></a> | <a
-					href="pdf?id=${ob.whUserId}"><img
-					src="../resources/image/pdf.png" width="30" hight="30" /></a>
+					href="pdf?id=${ob.poid}"><img src="../resources/image/pdf.png"
+					width="30" hight="30" /></a>
 				<table class="table">
 					<thead>
 						<tr>
 
-							<th>USER ID</th>
-							<td>${ob.whUserId}</td>
+							<th>ID</th>
+							<td>${ob.poid}</td>
 						</tr>
 						<tr>
-							<th>USER TYPE</th>
-							<td>${ob.userType}</td>
+							<th>CODE</th>
+							<td>${ob.orderCode}</td>
 						</tr>
 						<tr>
-							<th>USER CODE</th>
-							<td>${ob.userCode}</td>
+							<th>REF NUMBER</th>
+							<td>${ob.refNo}</td>
 						</tr>
 						<tr>
-							<th>USER FOR</th>
-							<td>${ob.userFor}</td>
+							<th>QUALITY CHECK</th>
+							<td>${ob.qltyCheck}</td>
 						</tr>
 						<tr>
-							<th>USER EMAIL</th>
-							<td>${ob.userEmail}</td>
+							<th>STATUS</th>
+							<td>${ob.status}</td>
 						</tr>
 						<tr>
-							<th>USER CONTECT</th>
-							<td>${ob.userContect}</td>
+							<th>DESCRIPTION</th>
+							<td>${ob.description}</td>
 						</tr>
-						<tr>
-							<th>USER IDTYPE</th>
-							<td>${ob.userIdType}</td>
-						</tr>
-						<tr>
-							<th>OTHER ID</th>
-							<td>${ob.other}</td>
-						</tr>
-						<tr>
-							<th>ID NUMBE</th>
-							<td>${ob.idNumber}</td>
-						</tr>
+
 					</thead>
 				</table>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

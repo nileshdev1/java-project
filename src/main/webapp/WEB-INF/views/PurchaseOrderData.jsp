@@ -16,8 +16,8 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-info text-center text-white text-uppercase">
-				<h3>Welcome To ShipmentType Data Page</h3>
+				class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>Welcome To PurchaseOrder Data Page</h3>
 			</div>
 
 
@@ -35,11 +35,11 @@
 							<thead>
 								<tr>
 									<th scope="col">ID</th>
-									<th scope="col">MODE</th>
 									<th scope="col">CODE</th>
-									<th scope="col">ENABLE</th>
-									<th scope="col">GRADE</th>
-									<th scope="col">NOTE</th>
+									<th scope="col">REF NUMBER</th>
+									<th scope="col">QUALITY CHECK</th>
+									<th scope="col">STATUS</th>
+									<th scope="col">DISCRIPTION</th>
 									<th colspan="3">OPERATION</th>
 								</tr>
 							</thead>
@@ -47,17 +47,17 @@
 								<c:forEach items="${list}" var="ob">
 
 									<tr>
-										<td>${ob.shipId}</td>
-										<td>${ob.shipMode}</td>
-										<td>${ob.shipCode}</td>
-										<td>${ob.enbShip}</td>
-										<td>${ob.shipGrade}</td>
-										<td>${ob.shipDesc}</td>
-										<td><a href="delete?sid=${ob.shipId}"><img
+										<td>${ob.poid}</td>
+										<td>${ob.orderCode}</td>
+										<td>${ob.refNo}</td>
+										<td>${ob.qltyCheck}</td>
+										<td>${ob.status}</td>
+										<td>${ob.description}</td>
+										<td><a href="delete?oid=${ob.poid}"><img
 												src="../resources/image/delete.png" width="30" hight="30" /></a>
-										<td><a href="edit?sid=${ob.shipId}"><img
+										<td><a href="edit?oid=${ob.poid}"><img
 												src="../resources/image/edit.png" width="30" hight="30" /></a>
-										<td><a href="view?sid=${ob.shipId}"><img
+										<td><a href="view?oid=${ob.poid}"><img
 												src="../resources/image/view.png" width="30" hight="30" /></a>
 									</tr>
 
@@ -73,7 +73,7 @@
 			</c:choose>
 		</div>
 		<div
-			class="card-footer bg-secondary text-center text-white text-uppercase">
+			class="card-footer bg-primary text-center text-white text-uppercase">
 			${message }</div>
 	</div>
 

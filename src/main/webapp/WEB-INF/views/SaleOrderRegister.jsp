@@ -32,6 +32,35 @@
 							<form:input path="saleOcode" />
 						</div>
 					</div>
+					
+					<div class="row">
+						<div class="col-4">
+							<label for="">SHIPMENT CODE</label>
+						</div>
+
+						<div class="col-4">
+							
+								<form:select path="shipob.shipId">
+								<form:option value="">-SELECT</form:option>
+								<form:options items="${shipMap}" />
+								</form:select>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-4">
+							<label for="">CUSTOMER CODE</label>
+						</div>
+
+						<div class="col-4">
+							
+								<form:select path="whob.whUserId">
+								<form:option value="">-SELECT</form:option>
+								<form:options items="${whmap}" />
+								</form:select>
+						</div>
+					</div>
+					
 
 					<div class="row">
 						<div class="col-4">
