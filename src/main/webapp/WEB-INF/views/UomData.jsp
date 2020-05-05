@@ -30,13 +30,14 @@
 							hight="30" /></a>
 
 
-						<table class="table">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th scope="col">ID</th>
 									<th scope="col">TYPE</th>
 									<th scope="col">MODEL</th>
 									<th scope="col">NOTE</th>
+									<th scope="col"></th>
 									<th colspan="3">OPERATION</th>
 								</tr>
 							</thead>

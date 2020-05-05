@@ -60,7 +60,7 @@
 										<td><a href="view?oid=${ob.poid}"><img
 												src="../resources/image/view.png" width="30" hight="30" /></a>
 									</tr>
-
+										<a href="parts?poId=${ob.id}">Add Parts</a>
 								</c:forEach>
 						</table>
 			</div>

@@ -24,7 +24,7 @@
 <a href="excel?id=${ob.orderId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
 <a href="pdf?id=${ob.orderId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table class="table">
-							<thead>
+							
 <tr>
 	<th>ORDER ID</th><td>${ob.orderId}</td>
 </tr>
@@ -43,7 +43,7 @@
 <tr>
 	<th>Note</th><td>${ob.description}</td>
 </tr>
-</thead>
+
 </table>
 </div>
 </div>

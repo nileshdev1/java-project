@@ -3,7 +3,9 @@ package org.nk.controller;
 import java.util.List;
 import java.util.Map;
 
+import org.nk.model.PurchaseDtl;
 import org.nk.model.PurchaseOrder;
+import org.nk.service.IPartService;
 import org.nk.service.IPurchaseOrderService;
 import org.nk.service.IShipmentTypeService;
 import org.nk.service.IWhUserTypeService;
@@ -26,6 +28,8 @@ public class PurchaseOrderController {
 	@Autowired
 	private IShipmentTypeService shipservice;
 	
+	@Autowired
+	private IPartService partService;
 	
 	@Autowired
 	private IWhUserTypeService whservice;
@@ -153,6 +157,23 @@ public class PurchaseOrderController {
 		return "PurchaseOrderView";
 	}
 	
+	@RequestMapping("/parts")
+	public String showChilds(@RequestParam("poId") Integer poId, Model model) {
+		
+		//get purchase Order Data
+		PurchaseOrder po=service.getOnePurchaseOrder(poId);
+		model.addAttribute("po", po);
+		
+		//from Backing Object
+		model.addAttribute("purchaseDtl", new PurchaseDtl());
+		
+		//DropDown Data
+		List<Object[]> partsList=partService.getPartIdAndCode();
+		Map<Integer,String> partsMap=CommonUtil.convert(partsList);
+		
+		return "PurchaseParts";
+		
+	}
 	
 	
 }

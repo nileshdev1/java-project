@@ -14,7 +14,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To WHUSERTYPE Data Page</h3>
 			</div>
 
@@ -29,7 +29,7 @@
 							hight="30" /></a>
 
 
-						<table class="table">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th scope="col">USER ID</th>
@@ -39,8 +39,10 @@
 									<th scope="col">USER EMAIL</th>
 									<th scope="col">USER CONTECT</th>
 									<th scope="col">USER IDTYPE</th>
-									<th colspan="3">OTHER ID</th>
-									<th colspan="3">ID NUMBE</th>
+									<th scope="col">OTHER ID</th>
+									<th scope="col">ID NUMBE</th>
+									<th colspan="3">OPERATION</th>
+									
 								</tr>
 							</thead>
 							<tbody>
@@ -76,7 +78,7 @@
 			</c:choose>
 		</div>
 		<div
-			class="card-footer bg-primary text-center text-white text-uppercase">
+			class="card-footer bg-secondary text-center text-white text-uppercase">
 			${message }</div>
 	</div>
 

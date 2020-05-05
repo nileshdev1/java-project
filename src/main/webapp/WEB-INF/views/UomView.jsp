@@ -24,7 +24,7 @@
 <a href="excel?id=${ob.uomId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
 <a href="pdf?id=${ob.uomId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table class="table">
-							<thead>
+							
 								<tr>
 						
 	<th>ID</th><td>${ob.uomId}</td>
@@ -39,7 +39,6 @@
 	<th>Note</th><td>${ob.uomDesc}</td>
 </tr>
 
-</thead>
 </table>
 </div>
 </div>

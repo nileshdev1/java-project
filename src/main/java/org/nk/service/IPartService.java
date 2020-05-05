@@ -7,10 +7,10 @@ import org.nk.model.Part;
 public interface IPartService {
 
 
-	Integer savePart(Part part);
-	void deletePart(Integer id);
-	void updatePart(Part part);
-	Part getOnePart(Integer id);
-	List<Part> getAllPart();
-	
+	public Integer savePart(Part part);
+	public void deletePart(Integer id);
+	public void updatePart(Part part);
+	public Part getOnePart(Integer id);
+	public List<Part> getAllPart();
+	public List<Object[]> getPartIdAndCode();
 }

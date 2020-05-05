@@ -17,6 +17,7 @@
 				class="card-header bg-primary text-center text-white text-uppercase">
 				<h3>Welcome To ShipmentType View Page</h3>
 			</div>
+	
 
 
 			<div class="card-body">
@@ -24,8 +25,8 @@
 <a href="excel?id=${ob.shipId}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
 <a href="pdf?id=${ob.shipId}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table class="table">
-							<thead>
-								<tr>
+				
+<tr>
 						
 	<th>ID</th><td>${ob.shipId}</td>
 </tr>
@@ -44,7 +45,6 @@
 <tr>
 	<th>Note</th><td>${ob.shipDesc}</td>
 </tr>
-</thead>
 </table>
 </div>
 </div>

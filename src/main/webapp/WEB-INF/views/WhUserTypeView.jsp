@@ -15,7 +15,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To WhUserType View Page</h3>
 			</div>
 
@@ -27,7 +27,7 @@
 					href="pdf?id=${ob.whUserId}"><img
 					src="../resources/image/pdf.png" width="30" hight="30" /></a>
 				<table class="table">
-					<thead>
+					
 						<tr>
 
 							<th>USER ID</th>
@@ -65,7 +65,6 @@
 							<th>ID NUMBE</th>
 							<td>${ob.idNumber}</td>
 						</tr>
-					</thead>
 				</table>
 			</div>
 		</div>

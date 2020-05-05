@@ -15,123 +15,131 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
-				<h3>Welcome To ORDER METHOD Edit Page</h3>
+				class="card-header bg-info text-center text-white text-uppercase">
+				<h3>WELCOME TO WHUSERTYPE REGISTRATION PAGE</h3>
 			</div>
 
 			<div class="card-body">
 				<form:form action="update" method="POST" modelAttribute="whUserType">
-
-
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">WHUSER ID</label>
+							<label for="whUserId"> USER ID</label>
 						</div>
-
 						<div class="col-4">
-							<form:input path="whUserId" readonly="true" />
+							<form:input path="whUserId" class="form-control" readonly="true" />
 						</div>
 					</div>
-
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">User Type</label>
+							<label for="userType"> USERTYPE</label>
 						</div>
-
 						<div class="col-4">
-							<form:radiobutton path="userType" value="vender" />
-							Vender
-							<form:radiobutton path="userType" value="customer" />
-							Customer
+							<form:radiobutton path="userType" value="Vendor" />Vendor
+							<form:radiobutton path="userType" value="Customer" />Customer
 						</div>
 					</div>
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">User Code</label>
+							<label for="userCode"> USERCODE</label>
 						</div>
-
 						<div class="col-4">
-							<form:input path="userCode" />
+							<form:input path="userCode" class="form-control" />
 						</div>
 					</div>
-
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">USER FOR</label>
+							<label for="userFor"> USERFOR</label>
 						</div>
-
 						<div class="col-4">
-							<form:select path="userFor">
-								<form:option value="ps">Purchase/Sale</form:option>
-							</form:select>
+							<form:input path="userFor" class="form-control" readonly="true"/>
 						</div>
 					</div>
-
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">USER EMAIL</label>
+							<label for="userEmail"> USEREMAIL</label>
 						</div>
-
 						<div class="col-4">
-							<form:input path="userEmail" />
+							<form:input path="userEmail" class="form-control" />
 						</div>
 					</div>
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">USER CONTECT</label>
+							<label for="userContect">USER CONTACT</label>
 						</div>
-
 						<div class="col-4">
-							<form:input path="userContect" />
+							<form:input path="userContect" class="form-control" />
 						</div>
 					</div>
-
-
+					
+					<!--new Row -->
+					
 					<div class="row">
 						<div class="col-4">
-							<label for="">USER ID TYPE</label>
+							<label for="userIdType"> USERIDTYPE</label>
 						</div>
-
 						<div class="col-4">
-							<form:select path="userIdType">
+							<form:select path=
+							"userIdType" class="form-control">
 								<form:option value="">-SELECT-</form:option>
-								<form:option value="pancard">PAN CARD</form:option>
-								<form:option value="aadhar">AADHAR</form:option>
-								<form:option value="voterid">VOTERID</form:option>
-								<form:option value="other">OTHER</form:option>
+								<form:option value="PANCARD">PANCARD</form:option>
+								<form:option value="AADHAR">AADHAR</form:option>
+								<form:option value="OTHER">OTHER</form:option>
 							</form:select>
 						</div>
 					</div>
-
-
-<div class="row">
+					
+					<!--new Row -->
+					
+					<div class="row">
 						<div class="col-4">
-							<label for="">IF OTHER</label>
+							<label for="other"> IFOTHER</label>
 						</div>
-
 						<div class="col-4">
-							<form:input path="other" />
+							<form:input path="other" class="form-control" readonly="true" />
 						</div>
 					</div>
 					
 					
+					<!--new Row -->
 					
 					<div class="row">
 						<div class="col-4">
-							<label for="">ID NUMBER</label>
+							<label for="idNumber"> ID NUMBER</label>
 						</div>
-
 						<div class="col-4">
-							<input Type="submit" value=update>
+							<form:input path="idNumber" class="form-control" />
+						</div>
+					</div>
+					
+					
+
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<input type="submit" value="create" class="btn btn-success" /> 
 						</div>
 					</div>
 					
 				</form:form>
+			</div>
+			<div class="card-footer bg-secondary text-center text-white text-uppercase">
+				${message }
 			</div>
 		</div>
 	</div>

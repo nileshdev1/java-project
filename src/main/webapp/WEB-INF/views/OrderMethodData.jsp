@@ -29,7 +29,7 @@
 							hight="30" /></a>
 
 
-						<table class="table">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th>ORDER ID</th>
@@ -38,6 +38,7 @@
 									<th>ORDER TYPE</th>
 									<th>ORDER ACCEPT</th>
 									<th>NOTE</th>
+									<th></th>
 									<th colspan="3">OPERATION</th>
 								</tr>
 							</thead>

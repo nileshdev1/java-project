@@ -49,6 +49,10 @@ public class PartServiceImpl implements IPartService {
 		
 		return list;
 	}
-	
+	@Override
+	public List<Object[]> getPartIdAndCode() {
+		
+		return dao.getPartIdAndCode();
+	}
 	
 }

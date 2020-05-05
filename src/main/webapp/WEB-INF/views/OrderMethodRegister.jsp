@@ -23,7 +23,7 @@
 
 					<div class="row">
 						<div class="col-4">
-							<label for="shipMode">OrderMode</label>
+							<label for="orderMode">OrderMode</label>
 						</div>
 
 						<div class="col-4">

@@ -28,7 +28,7 @@
 
 					<div class="row">
 						<div class="col-4">
-							<label="orderId">Order ID</label>
+							<label for="orderId">Order ID</label>
 						</div>
 						<div class="col-4">
 							<form:input path="orderId" readonly="true" />
@@ -37,13 +37,13 @@
 
 					<div class="row">
 						<div class="col-4">
-							<label for="shipMode">OrderMode</label>
+							<label for="orderMode">OrderMode</label>
 						</div>
 
 						<div class="col-4">
-							<form:radiobutton path="orderMode" value="sale" />
+							<form:radiobutton path="orderMode" value="Sale" />
 							Sale
-		   					<form:radiobutton path="orderMode" value="purchase" />
+		   					<form:radiobutton path="orderMode" value="Purchase" />
 		   					Purchase
 						</div>
 					</div>
