@@ -16,7 +16,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To SaleOrder Data Page</h3>
 			</div>
 
@@ -31,7 +31,7 @@
 							hight="30" /></a>
 
 
-						<table class="table">
+						<table class="table table-striped">
 							<thead>
 								<tr>
 									<th scope="col">ID</th>
@@ -75,7 +75,7 @@
 			</c:choose>
 		</div>
 		<div
-			class="card-footer bg-primary text-center text-white text-uppercase">
+			class="card-footer bg-secondary text-center text-white text-uppercase">
 			${message }</div>
 	</div>
 

@@ -16,7 +16,7 @@
 
 			<div
 				class="card-header bg-info text-center text-white text-uppercase">
-				<h3>>Welcome To Part Edit Page</h3>
+				<h3>Welcome To Part Edit Page</h3>
 			</div>
 
 			<div class="card-body">
@@ -27,29 +27,18 @@
 							<label for="">ID</label>
 						</div>
 						<div class="col-4">
-							<form:input path="pid" readonly="true" />
+							<form:input path="pid" readonly="true" class="form-control" />
 						</div>
 					</div>
 
+				
 					<div class="row">
 						<div class="col-4">
 							<label for="">CODE</label>
 						</div>
 
 						<div class="col-4">
-							<form:input path="pcode" />
-						</div>
-					</div>
-
-
-
-					<div class="row">
-						<div class="col-4">
-							<label for="">CODE</label>
-						</div>
-
-						<div class="col-4">
-							<form:input path="pcode" />
+							<form:input path="pcode" class="form-control"/>
 						</div>
 					</div>
 
@@ -64,7 +53,7 @@
 							<label for="">WIDTH</label>
 						</div>
 						<div class="col-4">
-							<form:input path="dwid" />
+							<form:input path="dwid" class="form-control"/>
 						</div>
 					</div>
 					<div class="row">
@@ -72,7 +61,7 @@
 							<label for="">LENGTH</label>
 						</div>
 						<div class="col-4">
-							<form:input path="dlen" />
+							<form:input path="dlen" class="form-control"/>
 						</div>
 					</div>
 					<div class="row">
@@ -80,7 +69,7 @@
 							<label for="">HIGHT</label>
 						</div>
 						<div class="col-4">
-							<form:input path="dhig" />
+							<form:input path="dhig" class="form-control"/>
 						</div>
 					</div>
 
@@ -90,7 +79,7 @@
 							<label for="">BASE COST</label>
 						</div>
 						<div class="col-4">
-							<form:input path="bcost" />
+							<form:input path="bcost" class="form-control"/>
 						</div>
 					</div>
 
@@ -100,7 +89,7 @@
 							<label for="">BASE CURRENCY</label>
 						</div>
 						<div class="col-4">
-							<form:select path="currency">
+							<form:select path="currency" class="form-control">
 								<form:option value=" ">-SELECT-</form:option>
 								<form:option value="inr">INR</form:option>
 								<form:option value="usd">USD</form:option>
@@ -115,10 +104,9 @@
 							<label for="">UOM</label>
 						</div>
 						<div class="col-4">
-							<form:select path="uomob.uomid">
+							<form:select path="uomob.uomId" class="form-control">
 								<form:option value="">-SELECT</form:option>
-								<form:option value="${uomlist}" itemvalue="uomId"
-									itemlabel="uomModel" />
+								<form:options items="${uomMap}" />
 							</form:select>
 						</div>
 					</div>
@@ -129,7 +117,7 @@
 							<label for="">SALE ORDER CODE</label>
 						</div>
 						<div class="col-4">
-							<form:select path="oMethodOb.orderId">
+							<form:select path="oSaleOb.orderId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${omSaleMap}" />
 							</form:select>
@@ -141,7 +129,7 @@
 							<label for="">PURCHASE ORDER CODE</label>
 						</div>
 						<div class="col-4">
-							<form:select path="oMethodOb.orderId">
+							<form:select path="oPurchaseOb.orderId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${omPurchaseMap}" />
 							</form:select>
@@ -154,9 +142,9 @@
 							<label for="">DESCRIPTION</label>
 						</div>
 						<div class="col-4">
-							<form:textarea path="discription" />
+							<form:textarea path="discription" class="form-control"/>
 						</div>
-					</div>
+						</div>
 
 					<div class="row">
 						<div class="col-4"></div>

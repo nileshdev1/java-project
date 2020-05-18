@@ -14,7 +14,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To PurchaseOrder View Page</h3>
 			</div>
 
@@ -26,7 +26,6 @@
 					href="pdf?id=${ob.poid}"><img src="../resources/image/pdf.png"
 					width="30" hight="30" /></a>
 				<table class="table">
-					<thead>
 						<tr>
 
 							<th>ID</th>
@@ -53,7 +52,6 @@
 							<td>${ob.description}</td>
 						</tr>
 
-					</thead>
 				</table>
 			</div>
 		</div>

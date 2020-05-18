@@ -39,7 +39,7 @@ public class SaleOrderController {
 		model.addAttribute("shipMap", shipMap);
 		
 		
-		List<Object[]> whlist=whservice.getUserType("customer");
+		List<Object[]> whlist=whservice.getUserType("Customer");
 		Map<Integer,String> whmap=CommonUtil.convert(whlist); 
 		model.addAttribute("whmap", whmap);
 		 

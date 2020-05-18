@@ -14,7 +14,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To SaleOrder View Page</h3>
 			</div>
 
@@ -24,7 +24,6 @@
 <a href="excel?id=${ob.saleOid}"><img src="../resources/image/excel.png"width="30" hight="30"/></a> |
 <a href="pdf?id=${ob.saleOid}"><img src="../resources/image/pdf.png"width="30" hight="30"/></a>
 <table class="table">
-							<thead>
 								<tr>
 						
 	<th>ID</th><td>${ob.saleOid}</td>
@@ -48,7 +47,6 @@
 	<th>DESCRIPTION</th><td>${ob.description}</td>
 </tr>
 
-</thead>
 </table>
 </div>
 </body>

@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.nk.dao.IPurchaseOrderDao;
+import org.nk.model.PurchaseDtl;
 import org.nk.model.PurchaseOrder;
 import org.nk.service.IPurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,22 @@ public class PurchaseOrderServiceImpl implements IPurchaseOrderService {
 		Collections.sort(list,(o1,o2)->o1.getPoid()-o2.getPoid());
 		
 		return list;
+	}
+	
+
+	@Transactional
+	public Integer savePurchaseDtl(PurchaseDtl dtl) {
+		return dao.savePurchaseDtl(dtl);
+	}
+	
+	@Transactional
+	public void deletePurchaseDtl(Integer id) {
+		dao.deletePurchaseDtl(id);
+	}
+	
+	@Transactional
+	public void updatePoStatus(Integer poId, String status) {
+		dao.updatePoStatus(poId, status);
 	}
 
 }

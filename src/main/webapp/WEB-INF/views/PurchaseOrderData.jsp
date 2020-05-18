@@ -16,7 +16,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To PurchaseOrder Data Page</h3>
 			</div>
 
@@ -59,8 +59,9 @@
 												src="../resources/image/edit.png" width="30" hight="30" /></a>
 										<td><a href="view?oid=${ob.poid}"><img
 												src="../resources/image/view.png" width="30" hight="30" /></a>
+										<a href="parts?poId=${ob.poid}">Add Parts</a>
 									</tr>
-										<a href="parts?poId=${ob.id}">Add Parts</a>
+									
 								</c:forEach>
 						</table>
 			</div>
@@ -73,7 +74,7 @@
 			</c:choose>
 		</div>
 		<div
-			class="card-footer bg-primary text-center text-white text-uppercase">
+			class="card-footer bg-secondary text-center text-white text-uppercase">
 			${message }</div>
 	</div>
 

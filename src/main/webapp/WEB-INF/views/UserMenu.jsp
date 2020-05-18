@@ -30,7 +30,7 @@
       <!-- one option start-->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          SHIPMENT TYPE
+          SHIPMENT
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="${url}/shipment/register">REGISTER</a>
@@ -43,6 +43,34 @@
       </li>
       <!-- one option end -->
       
+       <!-- one option start-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          UOM
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/uom/register">REGISTER</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/uom/all">ALL</a>
+         
+        </div>
+      </li>
+      <!-- one option end -->
+      
+       <!-- one option start-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          WHUSER
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/whuser/register">REGISTER</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/whuser/all">ALL</a>
+         
+        </div>
+      </li>
+      <!-- one option end -->
+      
       
       <!-- one option start-->
       <li class="nav-item dropdown">
@@ -50,16 +78,55 @@
           ORDER METHOD
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${url}/ordermethod/register">REGISTER</a>
+          <a class="dropdown-item" href="${url}/order/register">REGISTER</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/ordermethod/all">ALL</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/ordermethod/charts">CHARTS</a>
+          <a class="dropdown-item" href="${url}/order/all">ALL</a>
 
         </div>
       </li>
       <!-- one option end -->
+      
+       <!-- one option start-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PART
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/part/register">REGISTER</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/part/all">ALL</a>
+         
+        </div>
+      </li>
+      <!-- one option end -->
+      
+       <!-- one option start-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PURCHASE ORDER
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/purchaseorder/register">REGISTER</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/purchaseorder/all">ALL</a>
+         
+        </div>
+      </li>
+      <!-- one option end -->
 
+	 <!-- one option start-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         SALE ORDER
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/saleorder/register">REGISTER</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/saleorder/all">ALL</a>
+         
+        </div>
+      </li>
+      <!-- one option end -->
       
    
     </ul>

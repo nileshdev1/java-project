@@ -47,7 +47,7 @@ public class PartDaoImpl implements IPartDao {
 	@Override
 	public List<Object[]> getPartIdAndCode() {
 
-		String hql=" select id,partCode from org.nk.model.Part ";
+		String hql=" select pid,pcode from org.nk.model.Part ";
 		List<Object[]> list=(List<Object[]>) ht.find(hql);
 		
 		return list;

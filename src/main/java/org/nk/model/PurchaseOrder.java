@@ -1,11 +1,15 @@
 package org.nk.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +40,11 @@ public class PurchaseOrder {
 	@ManyToOne
 	@JoinColumn(name="whidfk")
 	private WhUserType whob ;
+	
+	
+	//We want to fetch all dtls when we get parent object
+	@OneToMany(mappedBy = "po",fetch = FetchType.EAGER)
+	private List<PurchaseDtl> childs;
 	
 	public PurchaseOrder() {
 		super();
@@ -111,12 +120,21 @@ public class PurchaseOrder {
 		this.whob = whob;
 	}
 
+	public List<PurchaseDtl> getChilds() {
+		return childs;
+	}
+
+	public void setChilds(List<PurchaseDtl> childs) {
+		this.childs = childs;
+	}
+
 	@Override
 	public String toString() {
 		return "PurchaseOrder [poid=" + poid + ", orderCode=" + orderCode + ", refNo=" + refNo + ", qltyCheck="
 				+ qltyCheck + ", status=" + status + ", description=" + description + ", shipob=" + shipob + ", whob="
-				+ whob + "]";
+				+ whob + ", childs=" + childs + "]";
 	}
+
 
 	
 		

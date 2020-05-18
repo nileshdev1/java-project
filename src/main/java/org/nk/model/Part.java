@@ -37,10 +37,30 @@ public class Part {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="orderIdFk")
-	private OrderMethod oMethodOb;
+	@JoinColumn(name="porderIdFk")
+	private OrderMethod oPurchaseOb;
+	
+	@ManyToOne
+	@JoinColumn(name="sorderIdFk")
+	private OrderMethod oSaleOb;
 	
 	
+
+	public OrderMethod getoPurchaseOb() {
+		return oPurchaseOb;
+	}
+
+	public void setoPurchaseOb(OrderMethod oPurchaseOb) {
+		this.oPurchaseOb = oPurchaseOb;
+	}
+
+	public OrderMethod getoSaleOb() {
+		return oSaleOb;
+	}
+
+	public void setoSaleOb(OrderMethod oSaleOb) {
+		this.oSaleOb = oSaleOb;
+	}
 
 	public Part() {
 		super();
@@ -106,27 +126,12 @@ public class Part {
 		this.uomob = uomob;
 	}
 
-	public OrderMethod getoMethodOb() {
-		return oMethodOb;
-	}
-
-	public void setoMethodOb(OrderMethod oMethodOb) {
-		this.oMethodOb = oMethodOb;
-	}
-
 	@Override
 	public String toString() {
 		return "Part [pid=" + pid + ", pcode=" + pcode + ", dwid=" + dwid + ", dlen=" + dlen + ", dhig=" + dhig
 				+ ", bcost=" + bcost + ", currency=" + currency + ", discription=" + discription + ", uomob=" + uomob
-				+ ", oMethodOb=" + oMethodOb + "]";
+				+ ", oPurchaseOb=" + oPurchaseOb + ", oSaleOb=" + oSaleOb + "]";
 	}
-	
-
-
-	
-	
-
-	
 	
 		
 }

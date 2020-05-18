@@ -30,7 +30,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="orderCode" />
+							<form:input path="orderCode" class="form-control"/>
 						</div>
 					</div>
 
@@ -41,7 +41,7 @@
 
 						<div class="col-4">
 							
-								<form:select path="shipob.shipId">
+								<form:select path="shipob.shipId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${shipMap}" />
 								</form:select>
@@ -55,7 +55,7 @@
 
 						<div class="col-4">
 							
-								<form:select path="whob.whUserId">
+								<form:select path="whob.whUserId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${whmap}" />
 								</form:select>
@@ -68,7 +68,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="refNo" />
+							<form:input path="refNo" class="form-control"/>
 						</div>
 					</div>
 
@@ -95,7 +95,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="status" value="OPEN" />
+							<form:input path="status" value="OPEN" class="form-control"/>
 						</div>
 
 						<div class="col-4">
@@ -110,7 +110,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="description" />
+							<form:textarea path="description" class="form-control"/>
 						</div>
 
 						<div class="col-4"></div>

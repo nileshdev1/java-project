@@ -2,9 +2,13 @@ package org.nk.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.nk.dao.IPurchaseOrderDao;
+import org.nk.model.PurchaseDtl;
 import org.nk.model.PurchaseOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +46,37 @@ public class PurchaseOrderDaoImpl implements IPurchaseOrderDao {
 	public List<PurchaseOrder> getAllPurchaseOrder() {
 
 		return ht.loadAll(PurchaseOrder.class);
+	}
+	
+	@Override
+	public Integer savePurchaseDtl(PurchaseDtl dtl) {
+		return (Integer) ht.save(dtl);
+	}
+
+	@Override
+	public void deletePurchaseDtl(Integer id) {
+		PurchaseDtl dtl=new PurchaseDtl();
+		dtl.setId(id);
+		ht.delete(dtl);
+	}
+
+	@Override
+	public void updatePoStatus(Integer poId, String status) {
+		ht.execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session) 
+					throws HibernateException 
+			{
+				String hql=" update in.nit.model.PurchaseOrder "
+						+" set status=:a "
+						+" where id=:b ";
+				int count=session.createQuery(hql)
+						.setParameter("a", status)
+						.setParameter("b", poId)
+						.executeUpdate();
+				return count;
+			}
+		});
 	}
 
 }

@@ -46,7 +46,7 @@ public class UomDaoImpl implements IUomDao {
 	@Override
 	public List<Object[]> getUomIdAndModel() {
 
-		String hql=" select uomId,uomModel from org.nk.model.Uom";
+		String hql=" select uomId,uomModel from org.nk.model.Uom ";
 
 		List<Object[]> list=(List<Object[]>) ht.find(hql);
 

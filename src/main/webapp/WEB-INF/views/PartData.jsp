@@ -14,7 +14,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To Part Data Page</h3>
 			</div>
 
@@ -38,8 +38,10 @@
 									<th scope="col">BASE COST</th>
 									<th scope="col">CURRENCY</th>
 									<th scope="col">UOM</th>
-									<th scope="col">ORDER CODE</th>
+									<th scope="col">ORDER PURCHASE</th>
+									<th scope="col">ORDER SALE</th>
 									<th scope="col">NOTE</th>
+									<th colspan="3">OPERATION</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -54,13 +56,14 @@
 										<td>${ob.bcost}</td>
 										<td>${ob.currency}</td>
 										<td>${ob.uomob.uomModel}
-										<td>${ob.oMethodOb.orderCode}
+										<td>${ob.oPurchaseOb.orderCode}
+										<td>${ob.oSaleOb.orderCode}
 										<td>${ob.discription}</td>
-										<td><a href="delete?sid=${ob.pid}"><img
+										<td><a href="delete?pid=${ob.pid}"><img
 												src="../resources/image/delete.png" width="30" hight="30" /></a>
-										<td><a href="edit?sid=${ob.pid}"><img
+										<td><a href="edit?pid=${ob.pid}"><img
 												src="../resources/image/edit.png" width="30" hight="30" /></a>
-										<td><a href="view?sid=${ob.pid}"><img
+										<td><a href="view?pid=${ob.pid}"><img
 												src="../resources/image/view.png" width="30" hight="30" /></a>
 									</tr>
 
@@ -76,7 +79,7 @@
 			</c:choose>
 		</div>
 		<div
-			class="card-footer bg-primary text-center text-white text-uppercase">
+			class="card-footer bg-secondary text-center text-white text-uppercase">
 			${message }</div>
 	</div>
 </body>

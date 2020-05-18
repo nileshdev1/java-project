@@ -29,7 +29,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="saleOcode" />
+							<form:input path="saleOcode" class="form-control"/>
 						</div>
 					</div>
 					
@@ -40,7 +40,7 @@
 
 						<div class="col-4">
 							
-								<form:select path="shipob.shipId">
+								<form:select path="shipob.shipId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${shipMap}" />
 								</form:select>
@@ -54,7 +54,7 @@
 
 						<div class="col-4">
 							
-								<form:select path="whob.whUserId">
+								<form:select path="whob.whUserId" class="form-control">
 								<form:option value="">-SELECT</form:option>
 								<form:options items="${whmap}" />
 								</form:select>
@@ -68,7 +68,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="refNumber" />
+							<form:input path="refNumber" class="form-control"/>
 						</div>
 						</div>
 
@@ -94,7 +94,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:select path="stockSource">
+							<form:select path="stockSource" class="form-control">
 								<form:option value=" ">-SELECT-</form:option>
 								<form:option value="open">OPEN</form:option>
 								<form:option value="aval">AVILABLE</form:option>
@@ -111,7 +111,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="status" value="SALE-OPEN" />
+							<form:input path="status" value="SALE-OPEN" class="form-control"/>
 						</div>
 
 						<div class="col-4">
@@ -126,7 +126,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="description" />
+							<form:textarea path="description" class="form-control"/>
 						</div>
 
 						<div class="col-4"></div>

@@ -132,7 +132,7 @@
 					<div class="row">
 						<div class="col-4"></div>
 						<div class="col-4">
-							<input type="submit" value="create" class="btn btn-success" /> 
+							<input type="submit" value="Update" class="btn btn-success" /> 
 						</div>
 					</div>
 					

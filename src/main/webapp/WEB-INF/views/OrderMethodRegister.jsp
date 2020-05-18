@@ -40,7 +40,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="orderCode" />
+							<form:input path="orderCode" class="form-control"/>
 						</div>
 					</div>
 					<div class="row">
@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:select path="orderType">s
+							<form:select path="orderType" class="form-control">
 		<form:option value="">-SELECT-</form:option>
 								<form:option value="fifo">FIFO</form:option>
 								<form:option value="lifo">LIFO</form:option>
@@ -77,7 +77,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="description" />
+							<form:textarea path="description" class="form-control"/>
 						</div>
 					</div>
 

@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.nk.model.WhUserType;
 import org.nk.service.IWhUserTypeService;
+import org.nk.util.EmailUtil;
 import org.nk.view.WhUserTypeExcelView;
 import org.nk.view.WhUserTypePdfView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +25,8 @@ public class WhUserTypeController {
 		@Autowired
 		private IWhUserTypeService service;
 
+		@Autowired
+		private EmailUtil emailUtil;
 
 		/*
 		 * This method is use to 
@@ -43,14 +47,34 @@ public class WhUserTypeController {
 		@RequestMapping(value="/save", method=RequestMethod.POST) 
 		public String saveWhUserType(
 
-				@ModelAttribute WhUserType whUserType,Model model) {
+				@ModelAttribute WhUserType whUserType,ModelMap map) {
 
 			Integer id=service.saveWhUserType(whUserType); 
 
 			String message="WhUserType "+id+" saved";
+			
+			if(id!=null) {
+				String text="Welcome To WhUser= "+whUserType.getUserCode()+", type="+whUserType.getUserType()+",All the Best!!";
+				
+				boolean sent=emailUtil.sendEmail(whUserType.getUserEmail(),"Welcome WhUser",text);
+				
+				if(sent) {
+					message+=",Email also sent!";
+				}else {
+					message+=",Email sending Fail";
+					
+				}
+				
+				
+				
+			}
+			
+			
 
-			model.addAttribute("message",message);
-
+			map.addAttribute("message",message);
+			map.addAttribute("whUserType",new WhUserType());
+			
+			
 			return "WhUserTypeRegister"; 
 		}
 

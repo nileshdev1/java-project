@@ -15,7 +15,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To PurchaseOrder Edit Page</h3>
 			</div>
 
@@ -28,7 +28,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="poid" readonly="true"/>
+							<form:input path="poid" readonly="true" class="form-control"/>
 						</div>
 					</div>
 					
@@ -39,7 +39,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="orderCode" />
+							<form:input path="orderCode" class="form-control" />
 						</div>
 					</div>
 
@@ -49,7 +49,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="refNo" />
+							<form:input path="refNo" class="form-control"/>
 						</div>
 						</div>
 
@@ -76,7 +76,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="status" value="OPEN" />
+							<form:input path="status" value="OPEN" class="form-control"/>
 						</div>
 
 						<div class="col-4">
@@ -91,7 +91,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="description" />
+							<form:textarea path="description" class="form-control"/>
 						</div>
 
 						<div class="col-4"></div>
@@ -109,7 +109,7 @@
 				</form:form>
 			</div>
 			<div
-				class="card-footer bg-primary text-center text-white text-uppercase">
+				class="card-footer bg-secondary text-center text-white text-uppercase">
 				${message }</div>
 		</div>
 	</div>

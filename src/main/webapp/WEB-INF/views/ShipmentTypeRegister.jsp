@@ -50,7 +50,7 @@
 						</div>
 						
 						<div class="col-4">
-							<form:input path="shipCode" />
+							<form:input path="shipCode" class="form-control"/>
 						</div>
 						
 						<div class="col-4">
@@ -65,7 +65,7 @@
 						</div>
 						
 						<div class="col-4">
-							<form:select path="enbShip">
+							<form:select path="enbShip" class="form-control">
 								<form:option value=" ">-SELECT-</form:option>
 								<form:option value="yes">YES</form:option>
 								<form:option value="no">NO</form:option>
@@ -103,7 +103,7 @@
 						</div>
 						
 						<div class="col-4">
-							<form:textarea path="shipDesc" />
+							<form:textarea path="shipDesc" class="form-control"/>
 						</div>
 						
 						<div class="col-4"></div>

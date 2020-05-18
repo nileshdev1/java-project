@@ -47,7 +47,7 @@ public class WhUserTypeDaoImpl implements IWhUserTypeDao {
 	@Override
 	public List<Object[]> getUserType(String user) {
 		
-		String hql="SELECT whUserId,userCode from org.nk.model.WhUserType where userType=?0 ";
+		String hql=" SELECT whUserId,userCode from org.nk.model.WhUserType where userType=?0  ";
 		
 		List<Object[]> list=(List<Object[]>) ht.find(hql, user);
 

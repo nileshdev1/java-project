@@ -15,7 +15,7 @@
 		<div class="card">
 
 			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+				class="card-header bg-info text-center text-white text-uppercase">
 				<h3>Welcome To SaleOrder Edit Page</h3>
 			</div>
 
@@ -28,7 +28,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="saleOid" readonly="true"/>
+							<form:input path="saleOid" readonly="true" class="form-control"/>
 						</div>
 					</div>
 					
@@ -39,7 +39,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="saleOcode" />
+							<form:input path="saleOcode" class="form-control"/>
 						</div>
 					</div>
 
@@ -49,7 +49,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="refNumber" />
+							<form:input path="refNumber" class="form-control"/>
 						</div>
 						</div>
 
@@ -75,7 +75,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:select path="stockSource">
+							<form:select path="stockSource" class="form-control">
 								<form:option value=" ">-SELECT-</form:option>
 								<form:option value="open">OPEN</form:option>
 								<form:option value="aval">AVILABLE</form:option>
@@ -92,7 +92,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="status" value="SALE-OPEN" />
+							<form:input path="status" value="SALE-OPEN" class="form-control"/>
 						</div>
 
 						<div class="col-4">
@@ -107,7 +107,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="" />
+							<form:textarea path="description" class="form-control"/>
 						</div>
 
 						<div class="col-4"></div>
@@ -125,7 +125,7 @@
 				</form:form>
 			</div>
 			<div
-				class="card-footer bg-primary text-center text-white text-uppercase">
+				class="card-footer bg-secondary text-center text-white text-uppercase">
 				${message }</div>
 		</div>
 	</div>

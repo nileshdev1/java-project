@@ -31,7 +31,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:select path="uomType">
+							<form:select path="uomType" class="form-control">
 								<form:option value=" ">-SELECT-</form:option>
 								<form:option value="Packing">PACKING</form:option>
 								<form:option value="NoPacking">NO-PACKING</form:option>
@@ -47,7 +47,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:input path="uomModel" />
+							<form:input path="uomModel" class="form-control" />
 						</div>
 					</div>
 
@@ -57,7 +57,7 @@
 						</div>
 
 						<div class="col-4">
-							<form:textarea path="uomDesc" />
+							<form:textarea path="uomDesc" class="form-control"/>
 						</div>
 					</div>
 
